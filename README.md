@@ -1,3 +1,3 @@
 # JS-basics
 
-Diary of a furloughed junior dev
+<b>Diary of a junior dev on furlough</b>
