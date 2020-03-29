@@ -106,7 +106,7 @@ age >= 18 ? console.log(firstName + 'drinks beer.')
     else {
         var drink = 'juice';
     }
-console.log(drink);*/
+console.log(drink);
 
 // Switch statement
 var job = 'instructor';
@@ -123,5 +123,126 @@ switch (job) {
         break;
     default:
         console.log(firstName + ' does something else.');
+    } 
+
+// Truthy and falsy values
+
+var height;
+
+height = 23;
+
+if (height || height === 0) {
+    console.log('Variable is defined');
+} else {
+    console.log('Variable is not defined');
+}
+
+// Equality operators
+if (height == '23') {
+    console.log('The == operator does type coercian!');
+} 
+
+//Functions
+
+function calculateAge(birthYear) {
+    return 2018 - birthYear;
+}
+
+var ageJohn = calculateAge(1990);
+var ageMike = calculateAge(1948);
+var ageJane = calculateAge(1969);
+console.log(ageJohn, ageMike, ageJane);
+
+function yearsUntilRetirement(year, firstName)
+{
+    var age = calculateAge(year);
+    var retirement = 65 - age;
+
+    if (retirement > 0) {
+        console.log(firstName + 'retires in ' + retirement + 'years.');
+    } else
+        console.log(firstName + 'is already retired')
     }
 
+yearsUntilRetirement(1990, 'John');
+yearsUntilRetirement(1948, 'Mike');
+yearsUntilRetirement(1969, 'Jane'); 
+
+// Function statements and expressions
+//function declaration whatDoYouDo = function(job, firstName) {}
+
+// function expression
+var whatDoYouDo = function(job, firstName) {
+    switch(job) {
+        case 'teacher':
+            return firstName + 'teaches kids how to code';
+        case 'driver':
+            return firstName + 'drives a cab in lisbon';
+        case 'designer':
+            return firstName + 'designs websites';
+        default:
+            return firstName + 'does something else';
+    }
+}
+
+console.log(whatDoYouDo('teacher', 'John'));
+console.log(whatDoYouDo('designer', 'Jane'));
+console.log(whatDoYouDo('retired', 'Mark')); 
+
+//Initialize new array
+
+var names = ['John', 'Mark', 'Jane'];
+var years = new Array(1990, 1969, 1948);
+
+console.log(names);
+console.log(names.length);
+
+// Muted Array data
+names[1] = 'Ben';
+names[5] = 'Mary';
+console.log(names);
+
+//Different data types
+var john = ['John', 'Smith', 1990, 'designer', false];
+
+john.push('blue');
+john.unshift('Mr.');
+console.log(john);
+
+john.pop();
+john.pop();
+john.shift();
+console.log(john);
+
+console.log(john.indexOf(23));
+
+var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
+console.log(isDesigner); */
+
+//Objects and properties
+
+//Object literal
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false
+};
+
+console.log(john.firstName);
+console.log(john['job']);
+var x = 'birthYear';
+console.log(john[x]);
+
+john.job = 'designer';
+john['isMarried'] = true;
+console.log(john);
+
+//new Object syntax
+var jane = new Object();
+jane.Name = 'Jane';
+jane.birthYear = 1969;
+jane['lastName'] = 'Smith';
+console.log(jane);
