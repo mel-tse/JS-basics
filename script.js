@@ -217,7 +217,7 @@ console.log(john);
 console.log(john.indexOf(23));
 
 var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
-console.log(isDesigner); */
+console.log(isDesigner); 
 
 //Objects and properties
 
@@ -245,4 +245,64 @@ var jane = new Object();
 jane.Name = 'Jane';
 jane.birthYear = 1969;
 jane['lastName'] = 'Smith';
-console.log(jane);
+console.log(jane); 
+
+//Objects and methods
+
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1992,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calcAge: function() {
+        this.age = 2018 - this.birthYear;
+    }
+};
+
+john.calcAge();
+console.log(john); 
+
+//Loops
+
+for (var i = 1; i <= 20; i += 2) {
+    console.log(i);
+} `
+
+// i = 0, 0 < 10 true, log i to console, i++
+// i = 1, 1 , 10 true, log i to the console, i++
+// ... 
+// i = 9, 9 , 10 true, log i to the console, i++
+// i = 10, 10 < 10 FALSE, exit the loop
+
+
+var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+for (var i = 0; i < john.length; i++) {
+    console.log(john[i]);
+}
+
+// While loop
+var i = 0;
+while(i < john.length) {
+    console.log(john[i]);
+    i++;
+} 
+
+// Continue and break statements
+
+var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') continue;
+    console.log(john[i]);
+}
+
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') break;
+    console.log(john[i]);
+}
+
+// Looping backwards
+for (var i = john.length - 1; i >=0; i--) {
+    console.log(john[i]);
+} */
